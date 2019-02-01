@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/alimentometro/static/js/1.79508c09.chunk.js"
   },
   {
-    "revision": "2f9f92a35ffa74d2472dff688c6b4329",
+    "revision": "97ff777958cbbf180a462efa758ce9eb",
     "url": "/alimentometro/index.html"
   }
 ];
