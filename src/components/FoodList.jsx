@@ -4,8 +4,7 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
   font-size: 1.2rem;
-  margin-right: 0.5rem;
-  margin-left: 0.5rem;
+  margin: 0.5rem;
 `;
 
 const List = styled.ul`
@@ -31,7 +30,7 @@ const Link = styled.a`
   padding-bottom: 0.5rem;
 `;
 
-function Foods({ foods }) {
+function FoodList({ foods }) {
   return (
     <>
       <Title>Alimentos</Title>
@@ -46,7 +45,7 @@ function Foods({ foods }) {
   );
 }
 
-Foods.propTypes = {
+FoodList.propTypes = {
   foods: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -55,4 +54,4 @@ Foods.propTypes = {
   ).isRequired,
 };
 
-export default Foods;
+export default FoodList;

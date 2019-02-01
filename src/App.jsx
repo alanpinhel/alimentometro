@@ -1,13 +1,15 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import aw from 'alimentometro-wrapper';
-import Foods from './components/Foods';
+import FoodList from './components/FoodList';
+import FoodForm from './components/FoodForm';
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Foods foods={aw.getAlimentos()} />
+      <FoodForm />
+      <FoodList foods={aw.getAlimentos()} />
     </>
   );
 }
