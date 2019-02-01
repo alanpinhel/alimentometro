@@ -37,10 +37,8 @@ function Foods({ foods }) {
       <Title>Alimentos</Title>
       <List>
         {foods.map(f => (
-          <Item>
-            <Link key={f.id} href="#!">
-              {f.nome}
-            </Link>
+          <Item key={f.id}>
+            <Link href="#!">{f.nome}</Link>
           </Item>
         ))}
       </List>
