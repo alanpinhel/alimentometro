@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <FoodForm />
-      <FoodList foods={aw.getAlimentos()} />
+      {<FoodList foods={aw.getAlimentos()} />}
+      {undefined && <FoodForm />}
     </>
   );
 }
