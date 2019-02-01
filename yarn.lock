@@ -1172,10 +1172,10 @@ ajv@^6.0.1, ajv@^6.1.0, ajv@^6.5.3, ajv@^6.5.5, ajv@^6.6.1:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-alimentometro-wrapper@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/alimentometro-wrapper/-/alimentometro-wrapper-1.0.2.tgz#6784a6da39edf7e98d92ab1b6dc2b0d7cafd040c"
-  integrity sha512-kjc8hYbUVPlbqVm5hGpbc5VtVzqimGfPmo1ecoqBlMCIyRIZoJIqELSMBqJqlXGT+gahZ42eYh7c2s97YPhGDQ==
+alimentometro-wrapper@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/alimentometro-wrapper/-/alimentometro-wrapper-1.0.4.tgz#d590510ee3d6ccc63e40c3b6e0b98adaf05d6839"
+  integrity sha512-ilmgXdmHDdzY13BMJAIY/PHPGq+L10rbaTMQ8DhG59Z21qZXg2lNyQVFTrHUoX8N11mfl2wk1gtanq+pLqd8WA==
 
 alphanum-sort@^1.0.0:
   version "1.0.2"
