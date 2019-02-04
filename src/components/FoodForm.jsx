@@ -1,55 +1,22 @@
+import 'rc-slider/assets/index.css';
+import 'rc-tooltip/assets/bootstrap.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { IoIosArrowBack } from 'react-icons/io';
-import {
-  paddingHeader,
-  bgColor,
-  borderColor,
-  actionColor,
-  fontSizeTitleHeader,
-  marginTitleHeader,
-} from '../utils/constants';
-
-const heightHeader = '125px';
-
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  height: ${heightHeader};
-  width: 100%;
-  padding: ${paddingHeader};
-  background-color: ${bgColor};
-  border-bottom: solid 1px ${borderColor};
-  box-sizing: border-box;
-  z-index: 1;
-`;
-
-const ActionButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  color: ${actionColor};
-  text-decoration: none;
-  line-height: 1;
-`;
-
-const Title = styled.h1`
-  font-size: ${fontSizeTitleHeader};
-  text-align: center;
-  margin: ${marginTitleHeader};
-`;
-
-const Description = styled.p`
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-`;
+import Slider from 'rc-slider';
+import Tooltip from 'rc-tooltip';
+import aw from 'alimentometro-wrapper';
+import Header from './Header';
+import { heightHeader } from '../utils/constants';
 
 const Main = styled.main`
   position: absolute;
   top: ${heightHeader};
-  height: calc(100vh - 110px - 80px);
+  height: calc(100vh - ${heightHeader} - 80px);
   width: 100%;
-  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
   box-sizing: border-box;
 `;
 
@@ -74,29 +41,46 @@ const Footer = styled.footer`
   z-index: 1;
 `;
 
-function FoodForm() {
+let teste;
+
+const { Handle } = Slider;
+
+const handle = props => {
+  const { value, dragging, index, ...restProps } = props;
+  teste = value;
+  return (
+    <Tooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={aw.formata(value)}
+      visible
+      placement="top"
+      key={index}
+    >
+      <Handle value={value} {...restProps} />
+    </Tooltip>
+  );
+};
+
+function FoodForm({ food }) {
+  const da = React.createRef();
   return (
     <>
-      <Header>
-        <ActionButton href="#!">
-          <IoIosArrowBack size="1.5rem" />
-          Alimentos
-        </ActionButton>
-
-        <Title>Arroz Integral</Title>
-
-        <Description>Quanto você precisa consumir?</Description>
-      </Header>
+      <Header
+        action={{ label: 'Alimentos', handleClick: () => {} }}
+        title={food.nome}
+        description="Quanto você precisa consumir?"
+      />
 
       <Main>
-        <input type="range" />
+        <Slider ref={da} min={0} max={10000} defaultValue={100} step={100} handle={handle} />
       </Main>
 
       <Footer>
         <Result>
           Prepare
-          <b> 1,5kg </b>
-          de Arroz Integral
+          <b>{` ${aw.formata(food.pesoBruto * teste)} `}</b>
+          de
+          {food.nome}
         </Result>
       </Footer>
     </>

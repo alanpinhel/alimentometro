@@ -1,16 +1,21 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import aw from 'alimentometro-wrapper';
-import FoodList from './components/FoodList';
-import FoodForm from './components/FoodForm';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+
+const Home = () => <Link to="/foods">Alimentos</Link>;
+const List = () => <h1>List</h1>;
+const Form = () => <h1>Form</h1>;
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      {undefined && <FoodList foods={aw.getAlimentos()} />}
-      {<FoodForm />}
-    </>
+    <BrowserRouter>
+      <>
+        <GlobalStyle />
+        <Route path="/" exact component={Home} />
+        <Route path="/foods" exact component={List} />
+        <Route path="/foods/:id" component={Form} />
+      </>
+    </BrowserRouter>
   );
 }
 

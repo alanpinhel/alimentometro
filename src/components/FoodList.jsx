@@ -1,50 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { IoIosArrowBack } from 'react-icons/io';
-import {
-  bgColor,
-  borderColor,
-  actionColor,
-  paddingHeader,
-  fontSizeTitleHeader,
-  sizeIconAction,
-  marginTitleHeader,
-} from '../utils/constants';
-
-const heightHeader = '100px';
-
-const Header = styled.header`
-  position: fixed;
-  top: 0;
-  height: ${heightHeader};
-  width: 100%;
-  padding: ${paddingHeader};
-  background-color: ${bgColor};
-  border-bottom: solid 1px ${borderColor};
-  box-sizing: border-box;
-  z-index: 1;
-`;
-
-const ActionButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  color: ${actionColor};
-  text-decoration: none;
-  line-height: 1;
-`;
-
-const Title = styled.h1`
-  font-size: ${fontSizeTitleHeader};
-  text-align: center;
-  margin: ${marginTitleHeader};
-`;
-
-const Main = styled.main`
-  position: absolute;
-  top: ${heightHeader};
-  width: 100%;
-`;
+import Header from './Header';
+import Main from './Main';
+import { borderColor } from '../utils/constants';
 
 const List = styled.ul`
   margin: 0;
@@ -58,7 +17,7 @@ const Item = styled.li`
   }
 `;
 
-const Link = styled.a`
+const Button = styled.a`
   display: block;
   line-height: 1;
   color: #000;
@@ -67,22 +26,16 @@ const Link = styled.a`
   padding-bottom: 0.5rem;
 `;
 
-function FoodList({ foods }) {
+function FoodList({ foods, handleCalculate }) {
   return (
     <>
-      <Header>
-        <ActionButton href="#!">
-          <IoIosArrowBack size={sizeIconAction} />
-          Tela Inicial
-        </ActionButton>
-        <Title>Alimentos</Title>
-      </Header>
+      <Header action={{ label: 'Tela Inicial', handleClick: () => {} }} title="Alimentos" />
 
       <Main>
         <List>
           {foods.map(f => (
             <Item key={f.id}>
-              <Link href="#!">{f.nome}</Link>
+              <Button onClick={() => handleCalculate(f.id)}>{f.nome}</Button>
             </Item>
           ))}
         </List>
