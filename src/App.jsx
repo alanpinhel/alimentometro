@@ -1,9 +1,9 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
+import FoodsList from './containers/FoodsList';
 
 const Home = () => <Link to="/foods">Alimentos</Link>;
-const List = () => <h1>List</h1>;
 const Form = () => <h1>Form</h1>;
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <>
         <GlobalStyle />
         <Route path="/" exact component={Home} />
-        <Route path="/foods" exact component={List} />
+        <Route path="/foods" exact component={FoodsList} />
         <Route path="/foods/:id" component={Form} />
       </>
     </BrowserRouter>

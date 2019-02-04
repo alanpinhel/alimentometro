@@ -1,10 +1,15 @@
-import { CALCULATE_FOOD } from '../actions/types';
+import { combineReducers } from 'redux';
+import aw from 'alimentometro-wrapper';
 
-export default function foodsReducer(state = [], action) {
+const initialState = aw.getAlimentos();
+
+function foods(state = initialState, action) {
   switch (action.type) {
-    case CALCULATE_FOOD:
-      return state;
     default:
       return state;
   }
 }
+
+export default combineReducers({
+  foods,
+});
