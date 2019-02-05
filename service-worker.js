@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/alimentometro/precache-manifest.d8ef6f4c1e0372f48fc5151edd068083.js"
+  "/alimentometro/precache-manifest.ed2c479643ef80a7e077d418c24b3432.js"
 );
 
 workbox.clientsClaim();
