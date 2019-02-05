@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
-export const CALCULATE_FOOD = 'CALCULATE_FOOD';
+export const LIST_FOODS = 'LIST_FOODS';
+export const SELECT_FOOD = 'SELECT_FOOD';

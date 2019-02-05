@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { IoIosArrowBack } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { listFoods } from '../actions';
 
 const Header = styled.header`
   position: sticky;
@@ -54,39 +55,61 @@ const FoodButton = styled(Link)`
   padding-bottom: 0.5rem;
 `;
 
-function FoodsList({ foods }) {
-  return (
-    <>
-      <Header>
-        <BackLink to="/foods/1">
-          <IoIosArrowBack size="1.5rem" />
-          Tela Inicial
-        </BackLink>
-        <Title>Alimentos</Title>
-      </Header>
+class FoodsList extends React.PureComponent {
+  componentDidMount() {
+    const { handleList } = this.props;
+    handleList();
+  }
 
-      <Main>
-        <List>
-          {foods.map(f => (
-            <Item key={f.id}>
-              <FoodButton to={`/foods/${f.id}`}>{f.nome}</FoodButton>
-            </Item>
-          ))}
-        </List>
-      </Main>
-    </>
-  );
+  render() {
+    const { list } = this.props;
+    return (
+      <>
+        <Header>
+          <BackLink to="/">
+            <IoIosArrowBack size="1.5rem" />
+            Tela Inicial
+          </BackLink>
+          <Title>Alimentos</Title>
+        </Header>
+
+        <Main>
+          <List>
+            {list.map(f => (
+              <Item key={f.id}>
+                <FoodButton to={`/foods/${f.id}`}>{f.nome}</FoodButton>
+              </Item>
+            ))}
+          </List>
+        </Main>
+      </>
+    );
+  }
 }
 
 FoodsList.propTypes = {
-  foods: PropTypes.arrayOf(
+  list: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       nome: PropTypes.string.isRequired,
     })
   ).isRequired,
+  handleList: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = ({ foods }) => ({ foods });
+const mapStateToProps = state => {
+  return {
+    list: state.foods.list,
+  };
+};
 
-export default connect(mapStateToProps)(FoodsList);
+const mapDispatchToProps = dispatch => {
+  return {
+    handleList: () => dispatch(listFoods()),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FoodsList);
