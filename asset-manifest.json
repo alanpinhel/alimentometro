@@ -1,6 +1,6 @@
 {
-  "main.js": "/alimentometro/static/js/main.5df5d27d.chunk.js",
-  "main.js.map": "/alimentometro/static/js/main.5df5d27d.chunk.js.map",
+  "main.js": "/alimentometro/static/js/main.45270335.chunk.js",
+  "main.js.map": "/alimentometro/static/js/main.45270335.chunk.js.map",
   "static/css/1.d55156f4.chunk.css": "/alimentometro/static/css/1.d55156f4.chunk.css",
   "static/js/1.5c13b386.chunk.js": "/alimentometro/static/js/1.5c13b386.chunk.js",
   "static/js/1.5c13b386.chunk.js.map": "/alimentometro/static/js/1.5c13b386.chunk.js.map",
@@ -8,6 +8,6 @@
   "runtime~main.js.map": "/alimentometro/static/js/runtime~main.50216a5b.js.map",
   "static/css/1.d55156f4.chunk.css.map": "/alimentometro/static/css/1.d55156f4.chunk.css.map",
   "index.html": "/alimentometro/index.html",
-  "precache-manifest.75834201ee82c21bb06efb84d9d74e5c.js": "/alimentometro/precache-manifest.75834201ee82c21bb06efb84d9d74e5c.js",
+  "precache-manifest.646d39aa722db5a7fb6dc3ada9f88bfd.js": "/alimentometro/precache-manifest.646d39aa722db5a7fb6dc3ada9f88bfd.js",
   "service-worker.js": "/alimentometro/service-worker.js"
 }
