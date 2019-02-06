@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/alimentometro/static/css/1.d55156f4.chunk.css"
   },
   {
-    "revision": "47fd5946a91b6324066da423b5bbfd89",
+    "revision": "4e1da8a4cd4a61d24ca2bf981f8ab374",
     "url": "/alimentometro/index.html"
   }
 ];
