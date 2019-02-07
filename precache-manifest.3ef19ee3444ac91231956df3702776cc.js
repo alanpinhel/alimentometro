@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/alimentometro/static/js/runtime~main.50216a5b.js"
   },
   {
-    "revision": "098c953688f79a5bb91f",
-    "url": "/alimentometro/static/js/main.098c9536.chunk.js"
+    "revision": "a576c54941503339c669",
+    "url": "/alimentometro/static/js/main.a576c549.chunk.js"
   },
   {
     "revision": "a9cd64966c59fff9bd8a",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/alimentometro/static/css/1.866c535c.chunk.css"
   },
   {
-    "revision": "d9157c83cf0b52e4f5ec462e331dc88f",
+    "revision": "88d10bff7b8c097f7a2f789e2eb456d0",
     "url": "/alimentometro/index.html"
   }
 ];
