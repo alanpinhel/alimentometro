@@ -10,6 +10,7 @@ const Main = styled.main`
   background-color: #f1f1f1;
   background-image: url(${header});
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   box-sizing: border-box;
 `;
