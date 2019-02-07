@@ -1,10 +1,9 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { HashRouter, Link, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
+import Home from './containers/Home';
 import FoodsList from './containers/FoodsList';
 import FoodsForm from './containers/FoodsForm';
-
-const Home = () => <Link to="/foods">Alimentos</Link>;
 
 function App() {
   return (
