@@ -40,13 +40,19 @@ const Description = styled.p`
 `;
 
 const Main = styled.main`
-  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
   box-sizing: border-box;
 `;
 
 const Footer = styled.footer`
-  position: fixed;
-  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
   width: 100%;
   padding: 0.5rem;
   background-color: #f8f8f8;
@@ -65,7 +71,7 @@ class FoodsForm extends React.PureComponent {
     output: '0g',
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     const { handleSelect, match } = this.props;
     handleSelect(match.params.id);
   }
@@ -101,9 +107,7 @@ class FoodsForm extends React.PureComponent {
         <Footer>
           <Output>
             Prepare
-            <b>{` ${output} `}</b>
-            de
-            {` ${item.nome}.`}
+            <b>{` ${output}.`}</b>
           </Output>
         </Footer>
       </>

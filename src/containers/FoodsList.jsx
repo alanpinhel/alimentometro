@@ -32,6 +32,7 @@ const Title = styled.h1`
 
 const Main = styled.main`
   width: 100%;
+  overflow-y: auto;
 `;
 
 const List = styled.ul`
