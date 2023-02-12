@@ -14,7 +14,7 @@
   "dependencies": {
     "alimentometro-wrapper": "^1.0.4",
     "prop-types": "^15.6.2",
-    "rc-slider": "^8.6.4",
+    "rc-slider": "^10.0.0",
     "rc-tooltip": "^3.7.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
